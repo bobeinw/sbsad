@@ -7,11 +7,11 @@ from telethon.tl import functions
 from datetime import datetime
 TIMEOUT = 10  
 counter = 0
-semaphore = asyncio.Semaphore(5)  
+semaphore = asyncio.Semaphore(2)  
 
 api_id = 24796447
 api_hash = '357f0b9aa7389298db9838d034919260'
-session_string = "1BJWap1sBu1z1ME-sEFyRNy3WxIcGtpz1aEaEAg3rlkDdkin-htCr6a2sTUTS3ihHQ80HBaWzhhnd1SRfYwCQH_z1hgjy-fwG2DGSkAqldNEzuOkg55ggyHOQUgr5wtOg1aqbjjZ7n9KkuACdrqltsI04ijN6QiqydLyK4guVUfxwjpiiKi1ioiyosea_deVsxoO6ieXlCk2V5hUhvZ7ENeVp17nGwTDP2_iI74g-YfA2Pp4yYc10TC7rtaMDWOssSTBcQaguQWHcpppNHezIE7Vx2M3zxrOrbIkyB0eY36HOMLoFxMu0tQiwNfVDUolZygjTsHB41L7yxY_LCx8g-BTWJBPm3ZM="
+session_string = "1BJWap1sAUHwCLnvAeei5VsbGRQ24AkPQWqfk-zUCmMLrOSCfB_eSPXtNwCNbCUNXsrBs4UzTa04CH1oW3KFc332Csnw3p1F1Nc_UdKKN8co1eqrBvei6wTwVFhk_kgdnijsUXBiykkiOzoVwqmO75rc7nFNp2hOqbtIJvODB2i6GWGe39wo023bp17VcPj7BgesJJfg6DSoSb1NrqRX4mqeIJIO7_xzGMW3ZpUganUM8qJ1cydg4h6LX-XuJMZQ0Pu0mtpQZXutFYHDautx_hfZ7QhnBncjQvpW9Z8qgq88XOR94syWAiBP4NivO8Gp52xcvKV8xUeM2_zHUxBVbkZqB4iHGQow="
 channel = None
 
 async def create_channel():
@@ -33,18 +33,19 @@ async def create_channel():
 
 async def send_video_with_description(client, current_time, user, clicks, is_flood=False, flood_time_remaining=None):
     try:
-        video_url = "https://t.me/YYYYYYvY/349"
+        video_url = "https://t.me/FTOGK/2"
         description = "𝙱𝚛𝚘𝚝𝚑𝚎𝚛 𝚝𝚑𝚎 𝚏𝚕𝚘𝚘𝚍 𝚑𝚊𝚜 𝚊𝚛𝚛𝚒𝚟𝚎𝚍 🎢🔥" if is_flood else "The user was installed in this channel successfully"
         flood_message = f"Since: {current_time} | Ending Flood: {flood_time_remaining}" if is_flood else f"Since: {current_time}"
         video_message = f"""
 ʜɪ sɪʀ ғʟᴏᴏᴅ ᴜsᴇʀɴᴀᴍᴇ
 ———————————————
-๛ Username: @{user}
+ᯤ  Username: @{user}
 ———————————————
-𝖯𝖸 ↠ @x_bob
+His - @ail_kamil
+His - @xx_madrid
 """
         
-        destination = "https://t.me/flood_kinsss"  
+        destination = "https://t.me/+mck0zgg7QRc4NWZk"  
         await client.send_file(destination, video_url, caption=video_message)
     except Exception as e:
         print(f"فشل إرسال الفيديو: {str(e)}")
@@ -54,7 +55,7 @@ async def assign_username_to_channel(client, username, clicks):
         channel_entity = await client.get_input_entity(channel)
         await client(functions.channels.UpdateUsernameRequest(channel_entity, username))
         print(f"تم تثبيت اليوزر في القناة بنجاح\n @{username}")       
-        about_text = f"@YYYYYYvY User Name here\n@YYYYYYvY معرفات داخل القناة\n@YYYYYYvY 频道内的用户名\n╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴"
+        about_text = f"Owner > @ail_kamil > @xx_madrid"
         await client(functions.messages.EditChatAboutRequest(peer=channel_entity, about=about_text))        
         await send_video_with_description(client, datetime.now().strftime('%Y-%m-%d %H:%M:%S'), username, clicks)
         return True
